@@ -37,6 +37,6 @@ app.use('/public', express.static(path.join(__dirname, '/app/public'), {
     }
 }));
 
-require('./routes')(app);
+require('../routes')(app);
 console.log("Server listening on port: " + (process.env.PORT || "5050"));
 http.createServer(app).listen(process.env.PORT || 5050);

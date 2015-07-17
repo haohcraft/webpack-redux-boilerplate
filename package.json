@@ -2,6 +2,9 @@
   "name": "webpack-redux-boilerplate",
   "version": "0.0.1",
   "description": "Webpack+React+Redux Starter Code",
+  "scripts": {
+    "dev": "NODE_ENV=dev DEBUG=projectName node index",
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ernieturner/webpack-redux-boilerplate"
@@ -16,6 +19,7 @@
     "redux": "1.0.0-rc"
   },
   "devDependencies": {
+    "babel": "^5.6.23",
     "babel-loader": "^5.2.2",
     "css-loader": "^0.15.1",
     "eslint": "0.23.0",
