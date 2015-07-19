@@ -1,4 +1,5 @@
-"use sci"
+"use strict";
+
 import path from "path";
 import webpack from "webpack";
 import config from "../config/dev";
@@ -9,13 +10,13 @@ module.exports = {
         app: [
             `webpack-dev-server/client?http://${config.HOST}:${config.PORT}`, 
             'webpack/hot/only-dev-server',
-            './app/main.js'
+            '../app/main.js'
         ],
         //All 3rd party source
         vendor: ['react', 'redux', 'lodash']
     },
     output: {
-        path: path.join(__dirname, 'app', 'public', 'dist'),
+        path: path.join(__dirname, '../app', 'public', 'dist'),
         publicPath: `http://${config.HOST}:${config.PORT}/public/dist/`,
         chunkFilename: "[name]-[hash].js",
         filename: '[name]-[hash].js',
@@ -45,7 +46,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"common.js"),
         new webpack.DefinePlugin({
             _DEVELOPMENT_: true,
-            NODE_ENV = JSON.stringify("development")
+            NODE_ENV: JSON.stringify("development")
         }),
 
         new webpack.optimize.DedupePlugin(),

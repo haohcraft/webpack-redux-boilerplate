@@ -4,4 +4,9 @@ delete process.env.BROWSER;
 require("babel/register");
 
 // Start the server app
+if (process.env.NODE_ENV === "dev") {
+    require("./webpack");
+}
+
 require("./server/server");
+

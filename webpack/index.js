@@ -1,28 +1,25 @@
-'use strict';
-
-require('babel/register');
-
+// Register babel to have ES6 support on the server
+require("babel/register");
 import path from 'path';
 import debug from 'debug';
-
 
 const env = process.env.NODE_ENV || 'dev';
 
 
 var configWebpack;
-var config = require("../config" + env);;
+var config = require("../config/" + env);;
 
 if (env !== 'prod' && env !== 'test') {
 
-  configWebpack = require(env +'.config');
+  configWebpack = require("./" + env +'.config');
   const serverOptions = {
     contentBase: `http://${config.HOST}:${config.PORT}`,
-    quiet: true,
+    quiet: false,
     noInfo: true,
     hot: true,
     publicPath: configWebpack.output.publicPath
   };
-
+  debug('dev')("configWebpack: ", configWebpack);
   var webpack = require('webpack');
   var WebpackDevServer = require('webpack-dev-server');
   var compiler = webpack(config);
