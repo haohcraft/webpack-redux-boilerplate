@@ -54,6 +54,7 @@ module.exports = {
 
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin()
+
     ],
     resolve: {
       extensions: ['', '.js', '.jsx', '.json', '.css', '.scss'],

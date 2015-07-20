@@ -4,7 +4,7 @@
   "description": "Webpack+React+Redux Starter Code",
   "scripts": {
     "dev": "NODE_ENV=dev DEBUG=dev node index",
-    "build": "NODE_ENV=prod webpack --stats --progress --config ./webpack"
+    "build": "NODE_ENV=prod webpack --stats --progress --config ./webpack/prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,17 @@
     "redux": "1.0.0-rc"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
     "babel": "^5.6.23",
     "babel-loader": "^5.2.2",
+    "babel-plugin-typecheck": "^1.1.0",
+    "babel-runtime": "^5.7.0",
     "css-loader": "^0.15.1",
     "debug": "^2.2.0",
     "del": "^1.2.0",
     "eslint": "0.23.0",
     "eslint-plugin-react": "2.5.2",
+    "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.6",
@@ -37,8 +41,10 @@
     "react-hot-loader": "^1.2.7",
     "run-sequence": "^1.1.1",
     "sass-loader": "^1.0.2",
+    "strip-loader": "^0.1.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
-    "webpack": "^1.10.0"
+    "webpack": "^1.10.0",
+    "webpack-dev-server": "^1.10.1"
   }
 }

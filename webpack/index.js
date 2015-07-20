@@ -33,9 +33,4 @@ if (env !== 'prod' && env !== 'test') {
     if (err) console.log(err);
     debug('dev')('webpack-dev-server listen on port %s', config.PORT);
   });
-} else {
-
-  module.exports = [
-    require(env +'.config')
-  ];
 }
