@@ -4,19 +4,22 @@ import path from "path";
 import webpack from "webpack";
 import config from "../config/dev";
 
+var assetsPath = path.resolve(__dirname, '../app/public/dist');
+
 module.exports = {
+    context: path.resolve(__dirname, '..'),
     entry: {
         //Application specific code.
         app: [
             `webpack-dev-server/client?http://${config.HOST}:${config.PORT}`, 
             'webpack/hot/only-dev-server',
-            '../app/main.js'
+            './app/main.js'
         ],
         //All 3rd party source
         vendor: ['react', 'redux', 'lodash']
     },
     output: {
-        path: path.join(__dirname, '../app', 'public', 'dist'),
+        path: assetsPath,
         publicPath: `http://${config.HOST}:${config.PORT}/public/dist/`,
         chunkFilename: "[name]-[hash].js",
         filename: '[name]-[hash].js',

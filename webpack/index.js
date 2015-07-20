@@ -14,15 +14,19 @@ if (env !== 'prod' && env !== 'test') {
   configWebpack = require("./" + env +'.config');
   const serverOptions = {
     contentBase: `http://${config.HOST}:${config.PORT}`,
-    quiet: false,
+    quiet: true,
     noInfo: true,
     hot: true,
-    publicPath: configWebpack.output.publicPath
+    inline: true,
+    lazy: false,
+    publicPath: configWebpack.output.publicPath,
+    headers: {"Access-Control-Allow-Origin": "*"},
+    stats: {colors: true}
   };
   debug('dev')("configWebpack: ", configWebpack);
   var webpack = require('webpack');
   var WebpackDevServer = require('webpack-dev-server');
-  var compiler = webpack(config);
+  var compiler = webpack(configWebpack);
   var devServer = new WebpackDevServer(compiler, serverOptions);
 
   devServer.listen(config.PORT, '0.0.0.0', function (err, result) {
