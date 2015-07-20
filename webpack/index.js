@@ -23,7 +23,7 @@ if (env !== 'prod' && env !== 'test') {
     headers: {"Access-Control-Allow-Origin": "*"},
     stats: {colors: true}
   };
-  debug('dev')("configWebpack: ", configWebpack);
+  // debug('dev')("configWebpack: ", configWebpack);
   var webpack = require('webpack');
   var WebpackDevServer = require('webpack-dev-server');
   var compiler = webpack(configWebpack);

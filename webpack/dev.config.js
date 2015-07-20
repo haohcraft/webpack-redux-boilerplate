@@ -21,8 +21,8 @@ module.exports = {
     output: {
         path: assetsPath,
         publicPath: `http://${config.HOST}:${config.PORT}/public/dist/`,
-        chunkFilename: "[name]-[hash].js",
-        filename: '[name]-[hash].js',
+        chunkFilename: "[name].js",
+        filename: '[name].js',
     },
     module: {
         loaders: [
